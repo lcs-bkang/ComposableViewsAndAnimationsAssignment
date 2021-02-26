@@ -21,32 +21,27 @@ struct CustomComposableDescriptionView: View {
                 
                 Group {
                     
-                    Text("Description")
+                    Text("Encouraging Quotes")
                         .font(.title2)
                         .bold()
                         .padding(.top)
                     
                     Text("""
-                        Replace this with a description of how to use this view.
-
-                        If the view accepts a parameter, provide a control to enter the input below.
+                        This view gives an encouraging quote to the user, whenever the view is tapped.  The quotes are drawn from a JSON file, and are displayed randomly every time.
                         """)
-                    
-                    TextField("Enter an input value", text: $phrase)
-                    
                 }
                 .padding(.bottom)
                 
             }
             
             NavigationLink(destination: CustomComposableView()) {
-                SimpleListItemView(title: "My Composable View",
-                                   caption: "A brief description of my view")
+                SimpleListItemView(title: "Encouraging Quotes",
+                                   caption: "Gives encouraging quotes to the user when tapped.")
             }
             
         }
         .padding()
-        .navigationTitle("My Composable View")
+        .navigationTitle("Encouraging Quotes")
         
     }
 }
