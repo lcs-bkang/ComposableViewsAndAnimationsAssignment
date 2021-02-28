@@ -11,10 +11,13 @@ struct CustomComposableView: View {
     
     // MARK: Stored Properties
     
+    // The message that will be shown
     @State var message: String = ""
     
+    // The size of the font
     @State var fontSize: Double = 25.0
     
+    // Color of the text
     @State var hue: Color = .red
     
     // MARK: Computed Properties
@@ -30,12 +33,12 @@ struct CustomComposableView: View {
     var body: some View {
         Text(message)
             .foregroundColor(hue)
-            .font(Font.custom(message, size: CGFloat(fontSize)))
+            .font(.custom(message, size: CGFloat(fontSize)))
             .onAppear() {
                 message = encouragingWords[Int.random(in: 0...5)]
                 fontSize = Double.random(in: 15...50)
                 hue = Color(hue: Double.random(in: 1...360) / 360, saturation: 0.8, brightness: 0.8)
-            }
+        }
     }
     
     // MARK: Functions
