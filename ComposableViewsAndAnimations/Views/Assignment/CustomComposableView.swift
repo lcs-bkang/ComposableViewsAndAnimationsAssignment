@@ -20,24 +20,27 @@ struct CustomComposableView: View {
     // Color of the text
     @State var hue: Color = .red
     
+    // Offset of the text
+    @State var offset: CGFloat = -200.0
+    
     // MARK: Computed Properties
     
-    private static let fontNames: [String] = {
-        var names: [String] = []
-        for familyName in UIFont.familyNames {
-            names.append(contentsOf: UIFont.fontNames(forFamilyName: familyName))
-        }
-        return names.sorted()
-    }()
-    
     var body: some View {
-        Text(message)
-            .foregroundColor(hue)
-            .font(.custom(message, size: CGFloat(fontSize)))
-            .onAppear() {
-                message = encouragingWords[Int.random(in: 0...5)]
-                fontSize = Double.random(in: 15...50)
-                hue = Color(hue: Double.random(in: 1...360) / 360, saturation: 0.8, brightness: 0.8)
+        
+        VStack {
+            
+            Text(message)
+                .foregroundColor(hue)
+                .font(.custom(message, size: CGFloat(fontSize)))
+                .onAppear() {
+                    message = encouragingWords[Int.random(in: 0...5)]
+                    fontSize = Double.random(in: 15...50)
+                    hue = Color(hue: Double.random(in: 1...360) / 360, saturation: 0.8, brightness: 0.8)
+                    
+                    withAnimation(.interpolatingSpring(mass: 1.0, stiffness: 1.0, damping: 0.75, initialVelocity: 6)) {
+                        
+                    }
+            }
         }
     }
     
