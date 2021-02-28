@@ -21,13 +21,13 @@ struct CustomComposableDescriptionView: View {
                 
                 Group {
                     
-                    Text("Encouraging Quotes")
+                    Text("Encouraging Messages")
                         .font(.title2)
                         .bold()
                         .padding(.top)
                     
                     Text("""
-                        This view gives an encouraging quote to the user, whenever the view is tapped.  The quotes are drawn from a JSON file, and are displayed randomly every time.
+                        This view gives an encouraging message to the user, whenever the view is tapped.  The messages are drawn from an array, and are displayed randomly every time.
                         """)
                 }
                 .padding(.bottom)
@@ -35,13 +35,13 @@ struct CustomComposableDescriptionView: View {
             }
             
             NavigationLink(destination: CustomComposableView()) {
-                SimpleListItemView(title: "Encouraging Quotes",
-                                   caption: "Gives encouraging quotes to the user when tapped.")
+                SimpleListItemView(title: "Encouraging Messages",
+                                   caption: "Gives encouraging messages to the user when tapped.")
             }
             
         }
         .padding()
-        .navigationTitle("Encouraging Quotes")
+        .navigationTitle("Encouraging Messages")
         
     }
 }

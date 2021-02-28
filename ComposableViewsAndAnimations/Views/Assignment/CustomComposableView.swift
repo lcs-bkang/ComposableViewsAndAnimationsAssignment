@@ -13,13 +13,15 @@ struct CustomComposableView: View {
     
     @State var message: String = ""
     
+    var hue: Color = .red
+    
     // MARK: Computed Properties
     
     var body: some View {
         Text(message)
             .font(Font.custom("", size: 20.0, relativeTo: .largeTitle))
             .onTapGesture {
-
+                
             }
     }
     
