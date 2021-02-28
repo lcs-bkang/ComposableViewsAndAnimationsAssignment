@@ -33,8 +33,6 @@ struct CustomComposableView: View {
             .font(Font.custom(message, size: CGFloat(fontSize)))
             .onAppear() {
                 message = encouragingWords[Int.random(in: 0...5)]
-            }
-            .onTapGesture {
                 fontSize = Double.random(in: 15...50)
                 hue = Color(hue: Double.random(in: 1...360) / 360, saturation: 0.8, brightness: 0.8)
             }

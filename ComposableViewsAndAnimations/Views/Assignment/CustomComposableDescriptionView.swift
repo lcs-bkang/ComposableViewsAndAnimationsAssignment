@@ -27,7 +27,7 @@ struct CustomComposableDescriptionView: View {
                         .padding(.top)
                     
                     Text("""
-                        This view gives an encouraging message to the user, whenever the view is tapped.  The messages are drawn from an array, and are displayed randomly every time.
+                        This view gives an encouraging message to the user, whenever the view appears.  The messages are drawn from an array, and are displayed randomly every time.
                         """)
                 }
                 .padding(.bottom)
@@ -36,7 +36,7 @@ struct CustomComposableDescriptionView: View {
             
             NavigationLink(destination: CustomComposableView()) {
                 SimpleListItemView(title: "Encouraging Messages",
-                                   caption: "Gives encouraging messages to the user when tapped.")
+                                   caption: "Gives encouraging messages to the user.")
             }
             
         }
