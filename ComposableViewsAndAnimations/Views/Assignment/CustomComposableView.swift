@@ -18,25 +18,29 @@ struct CustomComposableView: View {
     @State var fontSize: Double = 25.0
     
     // Color of the text
-    @State var hue: Color = .red
+    @State var hue: Double = 60.0
     
     // Controls offset
     @State var offset: CGFloat = 500.0
     
     // MARK: Computed Properties
     
+    var complementaryHue: Hue {
+        return Hue(base: hue, offset: 180)
+    }
+    
     var body: some View {
         
         VStack {
             
             Text(message)
-                .foregroundColor(hue)
+                .foregroundColor(Color(hue: hue, saturation: 0.8, brightness: 0.8))
                 .font(.custom(message, size: CGFloat(fontSize)))
                 .offset(x: 0, y: offset)
                 .onAppear() {
                     message = encouragingWords[Int.random(in: 0...5)]
                     fontSize = Double.random(in: 30...50)
-                    hue = Color(hue: Double.random(in: 1...360) / 360, saturation: 0.8, brightness: 0.8)
+                    hue = Double.random(in: 1...360) / 360
                     offset -= 500
             }
                 .animation(.interpolatingSpring(stiffness: 7, damping: 2, initialVelocity: 6))
