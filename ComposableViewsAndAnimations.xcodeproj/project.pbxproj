@@ -32,6 +32,7 @@
 		81D2F47C25E5856E00ACF089 /* ExerciseThreeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81D2F47B25E5856E00ACF089 /* ExerciseThreeView.swift */; };
 		81D2F48325E7199300ACF089 /* TutorialsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81D2F48225E7199300ACF089 /* TutorialsView.swift */; };
 		A690EFEB25ED4D27005E84B6 /* Hue.swift in Sources */ = {isa = PBXBuildFile; fileRef = A690EFEA25ED4D27005E84B6 /* Hue.swift */; };
+		A690EFEE25ED5389005E84B6 /* TextOverlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = A690EFED25ED5389005E84B6 /* TextOverlay.swift */; };
 		A69A6B4525E96757008E9E93 /* EncouragingWords.swift in Sources */ = {isa = PBXBuildFile; fileRef = A69A6B4425E96757008E9E93 /* EncouragingWords.swift */; };
 /* End PBXBuildFile section */
 
@@ -63,6 +64,7 @@
 		81D2F48A25E71FA400ACF089 /* CompletionMeterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompletionMeterView.swift; sourceTree = "<group>"; };
 		81D2F48B25E71FA400ACF089 /* CompletionMeterDescriptionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompletionMeterDescriptionView.swift; sourceTree = "<group>"; };
 		A690EFEA25ED4D27005E84B6 /* Hue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hue.swift; sourceTree = "<group>"; };
+		A690EFED25ED5389005E84B6 /* TextOverlay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextOverlay.swift; sourceTree = "<group>"; };
 		A69A6B4425E96757008E9E93 /* EncouragingWords.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EncouragingWords.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -161,6 +163,7 @@
 				81331FBA25E736B600CFDB02 /* CustomComposableView.swift */,
 				A69A6B4425E96757008E9E93 /* EncouragingWords.swift */,
 				A690EFEA25ED4D27005E84B6 /* Hue.swift */,
+				A690EFED25ED5389005E84B6 /* TextOverlay.swift */,
 			);
 			path = Assignment;
 			sourceTree = "<group>";
@@ -307,6 +310,7 @@
 				0E8E8B0A25E544D700012516 /* SimpleListItemView.swift in Sources */,
 				81D2F47925E5855600ACF089 /* ExerciseTwoView.swift in Sources */,
 				81D2F47225E5843200ACF089 /* ExercisesView.swift in Sources */,
+				A690EFEE25ED5389005E84B6 /* TextOverlay.swift in Sources */,
 				81D2F46625E57F5500ACF089 /* ExplicitAnimationsView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
