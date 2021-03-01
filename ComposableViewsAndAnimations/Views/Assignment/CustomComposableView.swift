@@ -31,7 +31,7 @@ struct CustomComposableView: View {
     
     var body: some View {
         
-        VStack {
+        ZStack {
             
             Text(message)
                 .foregroundColor(Color(hue: hue, saturation: 0.8, brightness: 0.8))
@@ -46,6 +46,12 @@ struct CustomComposableView: View {
                 .animation(.interpolatingSpring(stiffness: 7, damping: 2, initialVelocity: 6))
             
             Rectangle()
+                .frame(width: 150.0, height: nil)
+                .foregroundColor(Color(hue: complementaryHue.normalized, saturation: 0.8, brightness: 0.8))
+                .padding(.vertical, 225.0)
+                .rotationEffect(.degrees(90))
+                .offset(x: 3, y: offset)
+                
         }
     }
     
