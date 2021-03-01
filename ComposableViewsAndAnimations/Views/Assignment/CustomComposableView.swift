@@ -20,6 +20,9 @@ struct CustomComposableView: View {
     // Color of the text
     @State var hue: Color = .red
     
+    // Controls offset
+    @State var offset: CGFloat = 500.0
+    
     // MARK: Computed Properties
     
     var body: some View {
@@ -29,12 +32,16 @@ struct CustomComposableView: View {
             Text(message)
                 .foregroundColor(hue)
                 .font(.custom(message, size: CGFloat(fontSize)))
+                .offset(x: 0, y: offset)
                 .onAppear() {
                     message = encouragingWords[Int.random(in: 0...5)]
-                    fontSize = Double.random(in: 15...50)
+                    fontSize = Double.random(in: 30...50)
                     hue = Color(hue: Double.random(in: 1...360) / 360, saturation: 0.8, brightness: 0.8)
-                    
+                    offset -= 500
             }
+                .animation(.interpolatingSpring(stiffness: 7, damping: 2, initialVelocity: 6))
+            
+            
         }
     }
     
