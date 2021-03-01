@@ -41,7 +41,7 @@ struct CustomComposableView: View {
             }
                 .animation(.interpolatingSpring(stiffness: 7, damping: 2, initialVelocity: 6))
             
-            
+            Rectangle()
         }
     }
     
