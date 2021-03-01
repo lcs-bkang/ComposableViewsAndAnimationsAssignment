@@ -27,10 +27,11 @@ struct TextOverlay: View {
         Text(message)
             .foregroundColor(Color(hue: hue, saturation: 0.8, brightness: 0.8))
             .font(.custom(message, size: CGFloat(fontSize)))
+            .multilineTextAlignment(.center)
             .offset(x: 0, y: offset)
             .onAppear() {
                 message = encouragingWords[Int.random(in: 0...5)]
-                fontSize = Double.random(in: 30...50)
+                fontSize = Double.random(in: 30...45)
                 hue = Double.random(in: 1...360) / 360
                 offset -= 500
         }

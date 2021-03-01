@@ -23,6 +23,9 @@ struct CustomComposableView: View {
     // Controls offset
     @State var offset: CGFloat = 0
     
+    // Angle of rotation
+    @State var rotation: Double = 0
+    
     // MARK: Computed Properties
     
     var complementaryHue: Hue {
@@ -32,7 +35,6 @@ struct CustomComposableView: View {
     var body: some View {
         
         VStack {
-            
 
             Rectangle()
                 .frame(width: 150.0, height: nil)
@@ -40,9 +42,13 @@ struct CustomComposableView: View {
                 .padding(.vertical, 225.0)
                 .rotationEffect(.degrees(90))
                 .offset(x: 3, y: offset)
-                .overlay(TextOverlay())
-                
+                .onAppear() {
+                    rotation += 360
+                }
         }
+        .rotationEffect(.degrees(rotation))
+        .animation(.interpolatingSpring(stiffness: 6, damping: 2))
+        .overlay(TextOverlay())
     }
     
     // MARK: Functions
