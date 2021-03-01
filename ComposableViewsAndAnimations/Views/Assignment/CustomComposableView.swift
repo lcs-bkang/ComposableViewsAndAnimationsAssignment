@@ -18,7 +18,7 @@ struct CustomComposableView: View {
     @State var fontSize: Double = 25.0
     
     // Color of the text
-    @State var hue: Double = 60.0
+    @State var hue: Double = Double.random(in: 1...360)
     
     // Controls offset
     @State var offset: CGFloat = 0
@@ -28,8 +28,12 @@ struct CustomComposableView: View {
     
     // MARK: Computed Properties
     
-    var complementaryHue: Hue {
-        return Hue(base: hue, offset: 180)
+    var complementaryHue: Double {
+        if hue > 180 {
+            return hue - 180
+        } else {
+            return hue + 180
+        }
     }
     
     var body: some View {
@@ -38,7 +42,7 @@ struct CustomComposableView: View {
 
             Rectangle()
                 .frame(width: 150.0, height: nil)
-                .foregroundColor(Color(hue: complementaryHue.normalized, saturation: 0.8, brightness: 0.8))
+                .foregroundColor(Color(hue: (complementaryHue / 360), saturation: 0.8, brightness: 0.8))
                 .padding(.vertical, 225.0)
                 .rotationEffect(.degrees(90))
                 .offset(x: 3, y: offset)
