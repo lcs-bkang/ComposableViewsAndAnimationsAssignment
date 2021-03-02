@@ -39,7 +39,7 @@ struct CustomComposableView: View {
             Rectangle()
                 .frame(width: 150.0, height: nil)
                 .foregroundColor(Color(hue: complementaryHue, saturation: 0.8, brightness: 0.8))
-                .padding(.vertical, 225.0)
+                .padding(.vertical, 200)
                 .rotationEffect(.degrees(90))
                 .offset(x: 3, y: offset)
                 .onAppear() {
