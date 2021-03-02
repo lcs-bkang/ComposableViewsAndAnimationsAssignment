@@ -13,13 +13,13 @@ struct TextOverlay: View {
     @State var message: String = ""
     
     // The size of the font
-    @State var fontSize: Double = 25.0
+    @State var fontSize: Double
     
     // Color of the text
-    @State var hue: Double = Double.random(in: 1...360)
+    @State var hue: Double
     
     // Controls offset
-    @State var offset: CGFloat = 500.0
+    @State var offset: CGFloat
     
     var body: some View {
         
@@ -42,6 +42,6 @@ struct TextOverlay: View {
 
 struct TextOverlay_Previews: PreviewProvider {
     static var previews: some View {
-        TextOverlay()
+        TextOverlay(fontSize: 25.0, hue: 0.0, offset: 500)
     }
 }

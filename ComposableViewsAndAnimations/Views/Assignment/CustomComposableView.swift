@@ -11,13 +11,7 @@ struct CustomComposableView: View {
     
     // MARK: Stored Properties
     
-    // The message that will be shown
-    @State var message: String = ""
-    
-    // The size of the font
-    @State var fontSize: Double = 25.0
-    
-    // Color of the text
+    // Color of the rectangle
     @State var hue: Double = Double.random(in: 1...360)
     
     // Controls offset
@@ -29,10 +23,12 @@ struct CustomComposableView: View {
     // MARK: Computed Properties
     
     var complementaryHue: Double {
-        if hue > 180 {
+        if hue < 180 {
+            return hue + 180
+        } else if hue > 180 {
             return hue - 180
         } else {
-            return hue + 180
+            return 1.0
         }
     }
     
@@ -42,7 +38,7 @@ struct CustomComposableView: View {
 
             Rectangle()
                 .frame(width: 150.0, height: nil)
-                .foregroundColor(Color(hue: (complementaryHue / 360), saturation: 0.8, brightness: 0.8))
+                .foregroundColor(Color(hue: complementaryHue, saturation: 0.8, brightness: 0.8))
                 .padding(.vertical, 225.0)
                 .rotationEffect(.degrees(90))
                 .offset(x: 3, y: offset)
@@ -52,7 +48,7 @@ struct CustomComposableView: View {
         }
         .rotationEffect(.degrees(rotation))
         .animation(.interpolatingSpring(stiffness: 6, damping: 2))
-        .overlay(TextOverlay())
+        .overlay(TextOverlay(message: "", fontSize: 25.0, hue: hue, offset: 500))
     }
     
     // MARK: Functions
