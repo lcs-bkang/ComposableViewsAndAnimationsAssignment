@@ -26,6 +26,7 @@ struct CustomComposableView: View {
     // Flag to use animations or not
     @State private var useAnimation = false
     
+    
     // MARK: Computed Properties
     
     var complementaryHue: Double {
